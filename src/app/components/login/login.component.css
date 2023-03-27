@@ -1,0 +1,8 @@
+textarea{
+    resize: none;
+    height: 10vw;
+}
+form{
+    background-color: #d0e3f982;
+    border-radius: 3vw;
+}

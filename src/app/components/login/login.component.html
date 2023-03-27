@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <form class="container w-80 p-5 text-center" #form="ngForm"  (ngSubmit)="loginUser(form)">
+    <div class="form-outline mb-4">
+      <label class="form-label" for="username">Username</label>
+      <input name="username"  type="text" #username="ngModel" ngModel id="username" class="form-control"
+        placeholder="Enter your username" required/>
+        <p *ngIf="username.touched && username.errors?.['required']" class="text-danger">Username is
+          required</p>
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="password">Password</label>
+      <input name="password"  type="password" #password="ngModel" ngModel  id="password" class="form-control"
+        placeholder="Enter your password" required>
+        <p *ngIf="password.touched && password.errors?.['required']" class="text-danger">Password is
+          required</p>
+    </div>
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center"><p *ngIf="notUser" style="color: #a12424;">User not Found please <a [routerLink]="['/signUp']">sign up</a></p></div>
+    </div>
+
+    <button  [routerLink]="['/signUp']" class="btn btn-primary btn-block mb-4 m-auto">
+      Sign Up
+    </button>
+    <button style="margin-left: 19px !important;" class="btn btn-primary btn-block mb-4">
+      Log in
+    </button>
+    <br>
+    <button (click)="aboutus()" style="margin-left: 19px !important;" class="btn btn-secondary btn-block mb-2">
+      About Us
+    </button>
+  </form>
+</div>

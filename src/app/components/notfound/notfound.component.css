@@ -1,0 +1,18 @@
+a {
+  font: inherit;
+  border: 4px solid #ff0062;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  background: #ff0062;
+  cursor: pointer;
+}
+
+h1 {
+  width: 20px;
+  color: red;
+}
+p {
+  color: red;
+  width: 200px;
+}

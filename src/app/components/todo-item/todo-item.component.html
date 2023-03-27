@@ -1,0 +1,24 @@
+<ul  class="list-group list-group-horizontal rounded-0">
+    <li
+      class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+      <div class="form-check">
+        <input class="form-check-input me-0" type="checkbox" *ngIf="!todo.isDeleted" value="" id="flexCheckChecked2" [checked]="todo.status "
+          aria-label="..." (click)="changeStatus(todo.id); getTodo()"/>
+      </div>
+    </li>
+    <li [ngStyle]="{'text-decoration':todo.status ? 'line-through' : 'none' }"
+      class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+      <p class="lead fw-normal mb-0">{{todo.title}}</p>
+    </li>
+    <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent"> 
+      <div class="text-end text-muted">
+        <a (click)="deleteTodo(todo.id) ; getTodo()" *ngIf="!todo.isDeleted" class="text-muted" data-mdb-toggle="tooltip" title="Delete todo">
+          <span class="small mb-0"><i class="fas fa-info-circle me-2"></i><i class="bi bi-trash"></i></span>
+        </a>
+        <a (click)="favTodo(todo.id) ; getTodo()" class="text-muted" *ngIf="!todo.isDeleted" data-mdb-toggle="tooltip" title="Favourite todo">
+          <span class="small mb-0"><i class="fas fa-info-circle me-2"></i><i class="bi bi-star-fill"
+             [ngClass]="{ 'text-success': todo.isFav }"></i></span>
+        </a>
+      </div>
+    </li>
+  </ul>

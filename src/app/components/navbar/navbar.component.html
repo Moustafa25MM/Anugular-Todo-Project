@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+
+      <a class="navbar-brand" [routerLink]="['/todos/',userId ]" >
+        <img class="rounded-circle" src="../../../assets/user.jpg" width="100" height="100" alt="">
+      </a>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item me-3" style="color: red;">
+          <h2>Quote:</h2>
+        </li>
+        <li class="nav-item me-3" style="color: blue;">
+          <h2>{{user.qoute}}</h2>
+        </li>
+      </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item me-3" style="color: red;">
+                Username:
+              </li>
+              <li class="nav-item me-3" style="color: blue;">
+                {{user.username}}
+              </li>
+              <li (click)="getfav()" class="cursor nav-item me-3">
+                <i class="bi bi-star-fill"></i>
+                <span>{{favNum()}}</span>
+              </li>
+
+              <li (click)="getDeleted()" class="cursor nav-item me-3">
+                <i class="bi bi-trash"></i>
+                <span>{{deletedNum()}}</span>
+              </li>
+
+
+              <li class="nav-item me-3">
+                <i class="bi bi-calendar-check-fill"></i>
+                <span> {{doneNum()}}%</span>
+        </ul>
+
+        <li class="nav-item me-4 w-auto d-flex">
+            <button type="button" (click)="logOut()" class="btn btn-primary">Logout</button>
+        </li>
+      </div>
+    </div>
+  </nav>
